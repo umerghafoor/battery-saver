@@ -14,7 +14,7 @@ class CustomTitleBar(QWidget):
         self.layout.setContentsMargins(10,5,5,5)
         self.title = QLabel("Battery Saver")
 
-        btn_size = 25
+        btn_size = 32
 
         self.btn_close = QPushButton("x")
         self.btn_close.clicked.connect(self.btn_close_clicked)
@@ -67,8 +67,12 @@ class CustomTitleBar(QWidget):
         self.draggable = False
 
 def restore_action():
-    # Placeholder implementation
     window.show()
+
+def set_style_sheet(filename):
+    with open(filename, "r") as f:
+        style = f.read()
+        app.setStyleSheet(style)
 
 app = QApplication(sys.argv)
 window = QMainWindow()
@@ -121,6 +125,10 @@ loop_time_entry = QLineEdit("60")
 loop_time_entry.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
 
+current_css_file = "style.qss"
+set_style_sheet(current_css_file)
+
+
 layout = QVBoxLayout()
 layout.addWidget(battery_label)
 layout.addWidget(slider, alignment=Qt.AlignmentFlag.AlignHCenter)
@@ -133,10 +141,6 @@ widget = QWidget()
 widget.setLayout(layout)
 window.setCentralWidget(widget)
 
-# Apply styling using a separate CSS file
-with open("style.css", "r") as f:
-    style = f.read()
-    app.setStyleSheet(style)
 
 def update_battery_label():
     battery_percent = battery_monitor.update_battery_label()

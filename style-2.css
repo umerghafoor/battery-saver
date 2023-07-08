@@ -1,6 +1,7 @@
 /*
 Neon Style Sheet for QT Applications (QpushButton)
 */
+
 QPushButton {
     border-style: solid;
     border-color: #050a0e;
@@ -32,6 +33,7 @@ QPushButton:hover {
     border-radius: 1px;
     color: #d3dae3;
     padding: 2px;
+
 }
 
 QPushButton:pressed {
@@ -51,12 +53,13 @@ Neon Style Sheet for QT Applications (QSlider)
 */
 QSlider {
     border: none;
-    background-color: transparent;
+    background-color: #211944;
     width: 128px;
+    border-radius: 4px;
 }
 
 QSlider::groove:vertical {
-    background-color: #100E19;
+    background-color: transparent;
     width: 128px;
 }
 
@@ -64,18 +67,22 @@ QSlider::handle:vertical {
     background-color: transparent;
     width: 16px;
     height: 16px;
-    margin: 0px 0px;
+    margin-top: -8px;
+    margin-bottom: 8px;
+    margin-left: 32px;
+    margin-right: 32px;
 }
 
 QSlider::sub-page:vertical {
-    background-color: #100E19;
+    background-color: transparent;
+    border-radius: 4px;
 }
 
 QSlider::add-page:vertical {
     background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
             stop:0 #86BB6A, stop:0.4 #3D7428,
             stop:0.5 #3D7428, stop:1 #86BB6A);
-
+    border-radius: 4px;
 }
 
 QSlider::handle:horizontal:hover,
@@ -85,6 +92,7 @@ QSlider::handle:vertical:focus {
     background-color: transparent;
     border-color: transparent;
     outline: none;
+    border-radius: 4px;
 }
 
 /*
