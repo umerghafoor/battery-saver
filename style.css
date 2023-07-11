@@ -1,4 +1,17 @@
-/* Material Style Sheet for QT Applications */
+/* Material Style Sheet for QT Applications
+    featues
+        - QpushButton
+        - QSlider
+        - QMenuBar
+        - QLineEdit
+        - QLabel
+        - QMainWindow
+        - QScrollBar
+
+*/
+
+
+
 
 /* Set white background for the entire application */
 * {
@@ -35,17 +48,47 @@ QPushButton:pressed {
     background-color: #1565C0;
 }
 
-/* Material Style Sheet for QT Applications (QSlider) */
+/* Material Style Sheet for QT Applications (QSlider)
+fixes
+    height=32px must be fixed for horizental slider 
+    width=32px must be fixed for vertical slider 
+
+*/
 QSlider {
     border: none;
     background-color: #1565C0;
+    border-radius: 16px;
     width: 128px;
+}
+
+
+QSlider::groove:vertical,
+QSlider::groove:horizontal {
+    background-color: #a6d2f9;
     border-radius: 16px;
 }
 
-QSlider::groove:vertical {
-    background-color: #a6d2f9;
+
+QSlider::sub-page:vertical {
+    background-color: transparent;
     border-radius: 16px;
+}
+
+QSlider::sub-page:horizontal {
+    background-color: #2196F3;
+    border-radius: 16px;
+}
+
+
+QSlider::add-page:vertical {
+    background-color: #2196F3;
+    border-radius: 16px;
+}
+
+QSlider::add-page:horizontal {
+    background-color: transparent;
+    border-radius: 16px;
+
 }
 
 QSlider::handle:vertical {
@@ -53,30 +96,36 @@ QSlider::handle:vertical {
     width: 16px;
     height: 16px;
     margin-top: -8px;
-    margin-bottom: 25px;
-    margin-left: 32px;
-    margin-right: 32px;
+    margin-bottom: 28px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
-QSlider::sub-page:vertical {
+QSlider::handle:horizontal {
     background-color: transparent;
-    border-radius: 16px;
+    width: 16px;
+    height: 16px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 28px;
+    margin-right: -6px;
 }
 
-QSlider::add-page:vertical {
-    background-color: #2196F3;
-    border-radius: 16px;
-}
 
-QSlider::handle:horizontal:hover,
-QSlider::handle:horizontal:focus,
-QSlider::handle:vertical:hover,
-QSlider::handle:vertical:focus {
+QSlider::handle:horizontal:hover {
     background-color: #79b7ee;
     border-color: transparent;
     outline: none;
     border-radius: 8px;
 }
+
+QSlider::handle:vertical:hover {
+    background-color: #79b7ee;
+    border-color: transparent;
+    outline: none;
+    border-radius: 8px;
+}
+
 
 /* Material Style Sheet for QT Applications (QMainWindow) */
 QMainWindow {
@@ -152,21 +201,22 @@ QLabel::disabled {
 
 /* Material Style Sheet for QT Applications (QLineEdit) */
 QLineEdit {
-    color: #2196F3;
+    color: #a6d2f9;
     background-color: #f7fbff;
     font-size: 14px;
-    border: 1px solid #2196F3;
     padding: 6px;
 }
 
 QLineEdit::hover {
-    color: #ffffff;
-    background-color: #1E88E5;
+    color: #2196F3;
+    background-color: #79b7ee;
 }
 
 QLineEdit::focus {
-    color: #ffffff;
-    background-color: #1565C0;
+    color: #2196F3;
+    background-color: #f7fbff;
+    border: 1px solid #2196F3;
+    border-width: 2px;
 }
 
 QLineEdit::disabled {
@@ -213,4 +263,57 @@ QMenu::item:selected {
 QMenu::item:hover {
     background-color: #ffffff;
     color: #2196F3;
+}
+
+/* Material Style Sheet for QT Applications (QScrollBar) */
+
+
+QScrollBar {
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    margin-right: 5px;
+}
+
+QScrollBar::handle {
+    background-color: #4DA6FF;
+    border-radius: 6px;
+}
+
+QScrollBar::add-line,
+QScrollBar::sub-line {
+    height: 0px;
+    border-radius: 4px;
+}
+
+/* Material Style Sheet for QT Applications (QTableWidget) */
+
+QTableWidget::item {
+    background-color: white;
+    border-radius: 10px;
+}
+
+QTableWidget::item:selected {
+    background-color: #4DA6FF;
+    color: white;
+}
+
+QTableWidget::item:selected:focus {
+    outline: none;
+}
+
+QTableWidget::item:selected:active {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+QTableWidget::item:selected:first {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+QTableWidget::item:selected:last {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
 }
