@@ -85,6 +85,8 @@ class MainWindow(QWidget):
 
         self.setGeometry(4, 4, 200, 500)
 
+        self.setWindowIcon(QIcon("icon.png"))
+
         def set_style_sheet(filename):
             with open(filename, "r") as f:
                 style = f.read()
